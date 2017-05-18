@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inicio</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<nav>
+		<a href="index.php">Inicio</a>
+		<a href="mision.html">Mision</a>
+		<a href="vision.html">Vision</a>
+		<a href="reg_usuario.html">Registro Nuevos Usuarios</a>
+		<a href="reg_medico.html">Registro de Médicos</a>
+		<a href="login.php">Login</a>
+	</nav>
+	<form method="POST" action="insert_medico.php">
+		<h3>Infromación Personal</h3>
+		Apellido Paterno<input type="text" name="apPaterno"><br/>
+		Apellido Materno<input type="text" name="apMaterno"><br/>
+		Nombre(s)<input type="text" name="nombre"><br/>
+		<h3>Infromación de su Consultorio</h3>
+		Calle<input type="text" name="calle"><br/>
+		Número Interior<input type="text" name="noInt"><br/>
+		Número Exterior<input type="text" name="noExt"><br/>
+		Colonia<input type="text" name="colonia"><br/>
+		Municipio<input type="text" name="municipio"><br/>
+		Estado
+		<select name="estado">
+			<option>Aguascalientes</option>
+			<option>Baja California</option>
+			<option>Baja California Sur</option>
+			<option>Campeche</option>
+			<option>Chiapas</option>
+			<option>Chihuahua</option>
+			<option>Coahuila</option>
+			<option>Colima</option>
+			<option>Mexico City</option>
+			<option>Durango</option>
+			<option>Guanajuato</option>
+			<option>Guerrero</option>
+			<option>Hidalgo</option>
+			<option>Jalisco</option>
+			<option>México</option>
+			<option>Michoacán</option>
+			<option>Morelos</option>
+			<option>Nayarit</option>
+			<option>Nuevo León</option>
+			<option>Oaxaca</option>
+			<option>Puebla</option>
+			<option>Querétaro</option>
+			<option>Quintana Roo</option>
+			<option>San Luis Potosí</option>
+			<option>Sinaloa</option>
+			<option>Sonora</option>
+			<option>Tabasco</option>
+			<option>Tamaulipas</option>
+			<option>Tlaxcala</option>
+			<option>Veracruz</option>
+			<option>Yucatán</option>
+			<option>Zacatecas</option>
+		</select><br/>
+		<h3>Costos y Horarios de Consultas</h3>
+		Costo por consulta<input type="number" name="costo" min="0"><br/>
+		<input type="submit" name="enviar" value="Enviar">
+	</form>
+</body>
+</html>
