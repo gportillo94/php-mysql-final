@@ -18,10 +18,11 @@
 		Apellido Paterno<input type="text" name="apPaterno"><br/>
 		Apellido Materno<input type="text" name="apMaterno"><br/>
 		Nombre(s)<input type="text" name="nombre"><br/>
+		Fecha de Nacimiento <input type="date" name="fechaNacimiento"><br />
 		<h3>Infromación de su Consultorio</h3>
 		Calle<input type="text" name="calle"><br/>
-		Número Interior<input type="text" name="noInt"><br/>
-		Número Exterior<input type="text" name="noExt"><br/>
+		Número Interior<input type="number" name="noInt"><br/>
+		Número Exterior<input type="number" name="noExt"><br/>
 		Colonia<input type="text" name="colonia"><br/>
 		Municipio<input type="text" name="municipio"><br/>
 		Estado
@@ -60,7 +61,23 @@
 			<option>Zacatecas</option>
 		</select><br/>
 		<h3>Costos y Horarios de Consultas</h3>
+		Especialidad<input type="text" name="especialidad"><br />
 		Costo por consulta<input type="number" name="costo" min="0"><br/>
+		Lunes
+		<input type="time" name="lunesIni">
+		<input type="time" name="lunesFin"><br />
+		Martes
+		<input type="time" name="martesIni">
+		<input type="time" name="martesFin"><br />
+		Miercoles
+		<input type="time" name="miercolesIni">
+		<input type="time" name="miercolesFin"><br />
+		Jueves
+		<input type="time" name="juevesIni">
+		<input type="time" name="juevesFin"><br />
+		Viernes
+		<input type="time" name="viernesIni">
+		<input type="time" name="viernesFin"><br />
 		<input type="submit" name="enviar" value="Enviar">
 	</form>
 </body>

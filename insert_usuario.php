@@ -8,13 +8,14 @@
 	{
     	die("Connection failed: " . $conn->connect_error);
 	}
-
-	$insert_tabla_persona = "INSERT INTO persona (apPaterno, apMaterno, nombre) VALUES (?,?,?)" ;  
+	
+	$insert_tabla_persona = "INSERT INTO persona (apPaterno, apMaterno, nombre, fechaNacimiento) VALUES (?,?,?,DATE(?))" ;  
 	$stmt = $conn->prepare($insert_tabla_persona);
-	$stmt->bind_param("sss", $apPaterno, $apMaterno, $nombre) ; 
+	$stmt->bind_param("ssss", $apPaterno, $apMaterno, $nombre , $fechaNacimiento) ; 
 	$apPaterno = $_POST["apPaterno"];
 	$apMaterno = $_POST["apMaterno"];
 	$nombre = $_POST["nombre"];
+	$fechaNacimiento = $_POST["fechaNacimiento"];
 	$stmt->execute() ; 
 	$stmt->close() ;
 
