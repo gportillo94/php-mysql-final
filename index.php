@@ -18,7 +18,7 @@
 			<a href="login.php">Login</a>
 		</nav>
 		<h3>Busca a tu Médico</h3>
-		<form>
+		<form method="POST" action="buscar.php">
 			<select name="tipoBusqueda">
 				<option>Especialidad</option>
 				<option>Estado</option>		
@@ -39,7 +39,6 @@
 				<option>Guerrero</option>
 				<option>Hidalgo</option>
 				<option>Jalisco</option>
-				<option>México</option>
 				<option>Michoacán</option>
 				<option>Morelos</option>
 				<option>Nayarit</option>
@@ -66,20 +65,21 @@
 
 			function main(){
 				$("select[name=tipoBusqueda]").val("Especialidad"); 
-					$("select[name=tipoBusqueda]").change(function(event) {
-						if($("select[name=tipoBusqueda]").val() === "Estado"){
-							$("input[name=textoBusqueda]").hide();
-							$("select[name=estado]").show();
-						}
-						else if ($("select[name=tipoBusqueda]").val() === "Especialidad"){
-							$("select[name=estado]").hide();
-							$("input[name=textoBusqueda]").show();
+
+				$("select[name=tipoBusqueda]").change(function(event) {
+					if($("select[name=tipoBusqueda]").val() === "Estado"){
+						$("input[name=textoBusqueda]").hide();
+						$("select[name=estado]").show();
+					}
+					else if ($("select[name=tipoBusqueda]").val() === "Especialidad"){
+						$("select[name=estado]").hide();
+						$("input[name=textoBusqueda]").show();
 					}
 				});
+
 				$("#buscar").on('click', function(event) {
 					$("#msjLogin").text("Para buscar a tu médico registrate o inicia sesión");
 					event.preventDefault();
-
 				});
 			}
 			$(document).ready(main);
