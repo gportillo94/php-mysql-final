@@ -5,12 +5,12 @@
 		$select = ""; 
 		if($_POST["tipoBusqueda"] == "Especialidad")
 		{
-			$select .="select * from persona, domicilio, medico where domicilio.cpDomicilio = medico.cpMedico and persona.cpPersona=medico.cpPersona and medico.especialidad=";
+			$select .="SELECT * FROM persona, domicilio, medico WHERE domicilio.cpDomicilio = medico.cpMedico AND persona.cpPersona=medico.cpPersona AND medico.especialidad=";
 			$select.="'".$_POST['textoBusqueda']."'"; 
 		}
 		elseif ($_POST["tipoBusqueda"] == "Estado") 
 		{
-			$select .= "select * from persona, domicilio, medico where domicilio.cpDomicilio = medico.cpMedico and persona.cpPersona=medico.cpPersona and domicilio.estado="; 
+			$select .= "SELECT * FROM persona, domicilio, medico WHERE domicilio.cpDomicilio = medico.cpMedico AND persona.cpPersona=medico.cpPersona AND domicilio.estado="; 
 			$select.="'".$_POST['estado']."'"; 
 
 		}
@@ -33,9 +33,10 @@
 		while ($ren = $result->fetch_assoc()) 
 		{
 			echo "<div><ul>";
-			echo "<li>".$ren["apPaterno"]."</li>";
-			echo "<li>".$ren["apMaterno"]."</li>";
-			echo "<li>".$ren["nombre"]."</li>";
+			
+			echo "<li> <a href='infoMed.php?cpMedico=".$ren["cpMedico"]."''>"; 
+			echo $ren["apPaterno"]." ".$ren["apMaterno"]." ".$ren["nombre"];
+			echo "</a></li>";
 			echo "<li>".$ren["calle"]."</li>";
 			echo "<li>".$ren["noInt"]."</li>";
 			echo "<li>".$ren["noExt"]."</li>";
