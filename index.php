@@ -13,7 +13,7 @@
 			<a href="index.php">Inicio</a>
 			<a href="mision.html">Mision</a>
 			<a href="vision.html">Vision</a>
-			<a href="reg_usuario.html">Registro Nuevos Usuarios</a>
+			<a href="reg_usuario.php">Registro Nuevos Usuarios</a>
 			<a href="reg_medico.html">Registro de Médicos</a>
 			<a href="login.php">Login</a>
 		</nav>
