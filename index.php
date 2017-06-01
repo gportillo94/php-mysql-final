@@ -58,7 +58,7 @@
 				<option>Zacatecas</option>
 			</select>
 			<br />
-			<input type="submit" name="enviar" value="Busca" <?php if(!$_SESSION["login"]) echo "id='buscar'";?>  >
+			<input type="submit" name="enviar" value="Busca" <?php if(!isset($_SESSION["login"])) echo "id='buscar'";?>  >
 			<p id="msjLogin"></p>
 		</form>
 		<script>

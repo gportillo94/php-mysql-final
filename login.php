@@ -14,30 +14,34 @@
 		<a href="login.php">Login</a>
 	</nav>
 
-
 	<?php
 		session_start(); 
-		if(isset($_SESSION["login"]))
+		if(isset($_SESSION["login"]) && $_SESSION["login"] == True)
 		{
-			echo "<h4>Listo, ya puedes buscar a tu médico</h4>";
+			echo "<h4>Listo, ya puedes buscar a tu médico asdas</h4>";
+			echo "<a href='eliminar_cuenta.php?cpUsuario=".$_SESSION["cpUsuario"]."&cpPersona=".$_SESSION["cpPersona"]."'>Eliminar mi cuenta</a>"; 
+		
+
 		}
-		else if( ! isset ($_SESSION["login"]) && $_POST["password"])
+		else if(!isset ($_SESSION["login"]) && isset($_POST["password"]))
 		{
-			include "config/cred_bd.php";
+			include "config/cred_bd.php";	
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			if ($conn->connect_error) 
 			{
 				die("Connection failed: " . $conn->connect_error);
 			}
-			$select_tabla_usuario = "SELECT password FROM usuario WHERE correo=?"; 
+			$select_tabla_usuario = "SELECT cpUsuario,cpPersona,password FROM usuario WHERE correo=?"; 
 			$stmt = $conn->prepare($select_tabla_usuario); 
 			$stmt->bind_param("s", $_POST["correo"]); 
 			$stmt->execute();
-			$stmt->bind_result($password); 
+			$stmt->bind_result($cpUsuario,$cpPersona,$pass); 
 			$stmt->fetch(); 
-			if ($password === $_POST["password"])
+			if ($pass === $_POST["password"])
 			{
 				$_SESSION["login"] = True ; 
+				$_SESSION["cpUsuario"] = $cpUsuario; 
+				$_SESSION["cpPersona"] = $cpPersona; 
 				echo "<h4>Listo, ya puedes buscar a tu médico</h4>";
 			}
 			else

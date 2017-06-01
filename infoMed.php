@@ -15,7 +15,7 @@
 	while ($ren = $result->fetch_assoc()) 
 	{
 		echo "<h3>";
-		echo $ren["apPaterno"]." ".$ren["apMaterno"]." ".$ren[nombre];
+		echo $ren["apPaterno"]." ".$ren["apMaterno"]." ".$ren["nombre"];
 		echo "</h3>";
 	}
 
