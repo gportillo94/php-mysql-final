@@ -1,5 +1,4 @@
 <?php
-	print_r($_POST); 
 	include 'config/cred_bd.php';
 
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -61,3 +60,21 @@
 	$stmt->close() ;
 	$conn->close() ; 
 ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inicio</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<nav>
+		<a href="index.php">Inicio</a>
+		<a href="mision.html">Mision</a>
+		<a href="vision.html">Vision</a>
+		<a href="reg_usuario.php">Registro Nuevos Usuarios</a>
+		<a href="reg_medico.html">Registro de Médicos</a>
+		<a href="login.php">Login</a>
+	</nav>
+	<h3>Listo, medico agregado a la base de datos</h3>
+	</body>
+</html>

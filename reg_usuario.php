@@ -38,7 +38,7 @@
 	else
 	{
 		$cadena = "<a href='modificar_usuario.php?cpPersona="; 
-		$cadena.= $_SESSION["cpPersona"]."&cpUsuario";
+		$cadena.= $_SESSION["cpPersona"]."&cpUsuario=";
 		$cadena.= $_SESSION["cpUsuario"]."'>Modicar informacion</a>"; 
 		echo $cadena;
 	}

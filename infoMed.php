@@ -26,5 +26,5 @@
 		echo $ren["dia"]." ".$ren["horaInicio"]." ".$ren["horaFin"]; 
 		echo "</ui></div>";
 	}
-
+	echo "<br /><a href='index.php'>Regresar</a>";
 ?>

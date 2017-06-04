@@ -1,5 +1,5 @@
-<?php
 
+<?php
 	function hacerCadenaSelect()
 	{
 		$select = ""; 
@@ -50,6 +50,5 @@
 	{
 		echo "Sin resultados"; 
 	}
-
-
+	echo "<br /><a href='index.php'>Regresar</a>";
 ?>
